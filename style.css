@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+  height: 100%;  
+}
+/* 
+    0. R e u t i l i z a v é i s
+*/
+.btn{
+    font-size: 1.125rem;
+    padding: 0rem 3rem;
+    font-weight: 700;
+    height: 3.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer
+}
+
+.btn-random{
+    max-width: 48rem;
+}
+
+.btn-category{
+    min-width: 140px;
+}
+
+/* 
+    1. H e a d e r
+*/
+.main-header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    padding: 0rem 1rem;
+    border-bottom: 1px solid gray;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.main-header__title{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    gap: 0.75rem;
+}
+
+.main-header__navbar{
+    display: none;
+}
+
+.fa-bars, .fa-shop{
+    font-size: 26px;
+    cursor: pointer;
+}
+.main-header__navbox{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    
+}
+
+.main-header__navbox a{
+    color: black;
+}
+.active-link{
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+}
+
+.active-link:hover{
+    background-color: rgb(206, 206, 206);
+}
+
+.active{
+    background-color: #fff;
+    display: block;
+    position: fixed;
+    padding: 1rem;
+    width: 100vw;
+    top: 15vh;
+    left: 0;
+    right: 0;
+}
+
+/* 
+    2. M a i n
+*/
+
+.main-content{
+    margin-top: 15vh;
+    min-height: 70vh;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.hero__title{
+    font-size: 3rem;
+}
+
+.hero__description{
+    font-size: 1.125rem;
+}
+
+/* 
+    2. F o o t e r
+*/
+.main-footer{
+    height: 15vh;
+    border-top: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
