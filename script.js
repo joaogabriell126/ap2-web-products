@@ -21,18 +21,28 @@ const containerProdutos = document.getElementById('gallery__placeholder');
 let todosOsProdutos = []
 
 botoesCategoria.forEach(botao => {
-  
-  botao.addEventListener('click', () => {
-    
-    const categoriaSelecionada = botao.dataset.category;
-    
-    renderizarProdutos(categoriaSelecionada);
-  });
+    botao.addEventListener('click', () => {
+
+        const categoriaSelecionada = botao.dataset.category;
+
+        renderizarProdutos(categoriaSelecionada);
+    });
 });
 
 function renderizarProdutos(categoriaSelecionada) {
     const itensFiltrados = todosOsProdutos.filter(todosOsProdutos => todosOsProdutos.category == categoriaSelecionada)
-    console.log(itensFiltrados)
+
+    const cardsProdutos = itensFiltrados.map(item => {
+        return `
+      <div class="card-produto">
+        <img src="${item.thumbnail}" alt="${item.title}">
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+        <p>Categoria: ${item.category}</p>
+      </div>
+    `}).join('')
+
+    containerProdutos.innerHTML = cardsProdutos
 }
 
 fetch('https://dummyjson.com/products')
@@ -44,6 +54,5 @@ fetch('https://dummyjson.com/products')
         todosOsProdutos = data.products;
     })
     .catch(error => {
-        console.error('Erro ao buscar o post:'
-            , error);
+        console.error('Erro ao encontrar algum produto. Por favor tente novamente mais tarde!', error);
     });
