@@ -51,6 +51,39 @@ function renderizarProdutos(categoriaSelecionada) {
     containerProdutos.innerHTML = cardsProdutos
 }
 
+const galeryRandom = document.getElementById("gallery-random")
+const randomButton = document.getElementById("randomButton")
+
+randomButton.addEventListener('click', () => {
+    produtoAleatorio();
+})
+
+function produtoAleatorio(){
+    min = 0;
+    max = 30;
+    let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min
+    console.log(randomNumber)
+
+    const randomItemFilter = todosOsProdutos.find(produtos => produtos.id == randomNumber) 
+    console.log(randomItemFilter)
+
+    const cardHTML = `
+        <div class="card-produto">
+            <div class="card-produto__imagem">
+                <img src="${randomItemFilter.thumbnail}" alt="${randomItemFilter.title}">
+                <div class="card-produto__categoria">
+                    <span>${randomItemFilter.category}</span>
+                </div>
+            </div>
+            <div class="card-produto__description">
+                <h3>${randomItemFilter.title}</h3>
+                <p>${randomItemFilter.description}</p>
+            </div>
+        </div>`
+
+    galeryRandom.innerHTML = cardHTML;
+}
+
 fetch('https://dummyjson.com/products')
     .then(response => {
         if (!response.ok) throw new Error('Erro na resposta da API');
