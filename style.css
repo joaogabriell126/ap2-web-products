@@ -35,14 +35,28 @@ body {
     background: var(--meu-gradiente);
     color: #fff;
     max-width: 48rem;
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    transition: transform 7ms ease-out, box-shadow 7ms ease-out;
 }
 
-.btn-random:hover {
+.btn-random:active {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-1px) scale(1.1);
+    transform: translateY(-1px) scale(1.05);
 }
 
+@media (min-width: 1025px) {
+
+    .btn-random {
+        background: var(--meu-gradiente);
+        color: #fff;
+        max-width: 48rem;
+        transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    }
+
+    .btn-random:hover {
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        transform: translateY(-1px) scale(1.1);
+    }
+}
 
 
 .btn-category {
@@ -50,7 +64,7 @@ body {
     border: 1.7px solid var(--border);
     border-radius: 10px;
     width: 18rem;
-    transition: border 0.1s ease;
+    transition: border 3ms ease;
 }
 
 .btn-category:active {
@@ -59,7 +73,13 @@ body {
 
 @media (min-width: 1025px) {
     .btn-category {
+        transition: border 0.1s ease;
         min-width: 140px;
+
+    }
+
+    .btn-category:hover {
+        border: 2.5px solid var(--border-radius);
     }
 }
 
@@ -124,8 +144,8 @@ body {
     height: 15vh;
     padding: 0rem 1rem;
     border-bottom: 1px solid var(--border);
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(60px);
     z-index: 1000;
 }
 
@@ -186,29 +206,35 @@ body {
     border-radius: 10px;
     padding: 0.75rem 1rem;
 
-    &:active {
-        background-color: #eae9eb;
-    }
 }
 
-.active-page {
-    background-color: #ECE6F9;
-
-    color: #6E36EF &:active {
-        background-color: #eae9eb;
-    }
+.active-link:hover {
+    background-color: #eae9eb;
 }
 
 @media (min-width: 1025px) {
-    .active-page {
+    .active-link:hover {
+        color: #6548E4;
         background-color: transparent;
+    }
+}
 
-        &:active {
-            background-color: transparent;
-        }
+.active-link.active-page {
+    background-color: #ECE6F9;
+    color: #6E36EF
+}
+
+.active-page:active {
+    background-color: #eae9eb;
+}
+
+@media (min-width: 1025px) {
+    .active-link.active-page {
+        background-color: transparent;
+        color: #6E36EF
     }
 
-    .active-link:active {
+    .active-page:hover {
         background-color: transparent;
     }
 }
