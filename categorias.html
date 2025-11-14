@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
+
 <body>
     <!-- Header das páginas -->
     <header class="main-header">
@@ -20,21 +22,25 @@
 
         <nav id="sideMenu" class="main-header__navbar">
             <ul class="main-header__navbox">
-                <li class="active-link"><a href="./index.html">Home</a></li>
-                <li class="active-link active-page"><a href="./categorias.html">Catálogo</a></li>
+                <li><a href="./index.html" class="active-link">Home</a></li>
+                <li><a href="./categorias.html" class="active-link active-page">Catálogo</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="main-content">
-        <section class="hero">            
+        <section class="hero">
             <h1 class="hero__title">Catálogo de <br><span class="text-highlight">Produtos</span></h1>
             <p class="hero__description">Escolha uma categoria abaixo para explorar nossa coleção exclusiva</p>
             <div class="hero__btn-box">
-                <button class="btn btn-category"data-category="beauty"><i class="fa-solid fa-box box--little"></i>Beleza</button>
-                <button class="btn btn-category"data-category="fragrances"><i class="fa-solid fa-box box--little"></i>Fragrância</button>
-                <button class="btn btn-category"data-category="furniture"><i class="fa-solid fa-box box--little"></i>Movéis</button>
-                <button class="btn btn-category" data-category="groceries"><i class="fa-solid fa-box box--little"></i>Mecearia</button>
+                <button class="btn btn-category" data-category="beauty"><i
+                        class="fa-solid fa-box box--little"></i>Beleza</button>
+                <button class="btn btn-category" data-category="fragrances"><i
+                        class="fa-solid fa-box box--little"></i>Fragrância</button>
+                <button class="btn btn-category" data-category="furniture"><i
+                        class="fa-solid fa-box box--little"></i>Movéis</button>
+                <button class="btn btn-category" data-category="groceries"><i
+                        class="fa-solid fa-box box--little"></i>Mecearia</button>
             </div>
         </section>
 
@@ -48,4 +54,5 @@
     </footer>
     <script src="./script.js"></script>
 </body>
+
 </html>
