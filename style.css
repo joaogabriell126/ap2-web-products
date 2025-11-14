@@ -48,7 +48,7 @@ body{
     border: 1.7px solid var(--border);
     border-radius: 10px;
     width: 18rem;
-    transition: border 0.08s ease;
+    transition: border 0.1s ease;
 }
 
 .btn-category:hover{

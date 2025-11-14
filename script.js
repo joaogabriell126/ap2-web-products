@@ -13,5 +13,37 @@ headerMenu.addEventListener('click', () => {
         headerMenu.classList.remove('fa-xmark');
         headerMenu.classList.add('fa-bars');
     }
-
 });
+
+const botoesCategoria = document.querySelectorAll('.btn-category');
+const containerProdutos = document.getElementById('gallery__placeholder');
+
+let todosOsProdutos = []
+
+botoesCategoria.forEach(botao => {
+  
+  botao.addEventListener('click', () => {
+    
+    const categoriaSelecionada = botao.dataset.category;
+    
+    renderizarProdutos(categoriaSelecionada);
+  });
+});
+
+function renderizarProdutos(categoriaSelecionada) {
+    const itensFiltrados = todosOsProdutos.filter(todosOsProdutos => todosOsProdutos.category == categoriaSelecionada)
+    console.log(itensFiltrados)
+}
+
+fetch('https://dummyjson.com/products')
+    .then(response => {
+        if (!response.ok) throw new Error('Erro na resposta da API');
+        return response.json();
+    })
+    .then(data => {
+        todosOsProdutos = data.products;
+    })
+    .catch(error => {
+        console.error('Erro ao buscar o post:'
+            , error);
+    });
