@@ -19,15 +19,16 @@ const botoesCategoria = document.querySelectorAll('.btn-category');
 const containerProdutos = document.getElementById('gallery__placeholder');
 
 let todosOsProdutos = []
+if (containerProdutos) {
+    botoesCategoria.forEach(botao => {
+        botao.addEventListener('click', () => {
 
-botoesCategoria.forEach(botao => {
-    botao.addEventListener('click', () => {
+            const categoriaSelecionada = botao.dataset.category;
 
-        const categoriaSelecionada = botao.dataset.category;
-
-        renderizarProdutos(categoriaSelecionada);
+            renderizarProdutos(categoriaSelecionada);
+        });
     });
-});
+}
 
 function renderizarProdutos(categoriaSelecionada) {
     const itensFiltrados = todosOsProdutos.filter(todosOsProdutos => todosOsProdutos.category == categoriaSelecionada)
@@ -54,17 +55,19 @@ function renderizarProdutos(categoriaSelecionada) {
 const galeryRandom = document.getElementById("gallery-random")
 const randomButton = document.getElementById("randomButton")
 
-randomButton.addEventListener('click', () => {
-    produtoAleatorio();
-})
+if (randomButton) {
+    randomButton.addEventListener('click', () => {
+        produtoAleatorio();
+    })
+}
 
-function produtoAleatorio(){
-    min = 0;
+function produtoAleatorio() {
+    min = 1;
     max = 30;
     let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min
     console.log(randomNumber)
 
-    const randomItemFilter = todosOsProdutos.find(produtos => produtos.id == randomNumber) 
+    const randomItemFilter = todosOsProdutos.find(produtos => produtos.id == randomNumber)
     console.log(randomItemFilter)
 
     const cardHTML = `
