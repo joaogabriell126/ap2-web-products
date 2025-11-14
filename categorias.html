@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP2 WebDev - Catalogo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <!-- Header das páginas -->
+    <header class="main-header">
+        <!-- Título do Header -->
+        <div class="main-header__title">
+            <i class="fa-solid fa-shop"></i>
+            <h2>Shopping</h2>
+        </div>
+
+        <i id="headerMenu" class="fa-solid fa-bars"></i>
+
+        <nav id="sideMenu" class="main-header__navbar">
+            <ul class="main-header__navbox">
+                <li class="active-link"><a href="./index.html">Home</a></li>
+                <li class="active-link active-page"><a href="./categorias.html">Catálogo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">            
+            <h1 class="hero__title">Catálogo de <br><span class="text-highlight">Produtos</span></h1>
+            <p class="hero__description">Escolha uma categoria abaixo para explorar nossa coleção exclusiva</p>
+            <div class="hero__btn-box">
+                <button class="btn btn-category"><i class="fa-solid fa-box box--little"></i>Beleza</button>
+                <button class="btn btn-category"><i class="fa-solid fa-box box--little"></i>Fragrância</button>
+                <button class="btn btn-category"><i class="fa-solid fa-box box--little"></i>Movéis</button>
+                <button class="btn btn-category"><i class="fa-solid fa-box box--little"></i>Mecearia</button>
+            </div>
+        </section>
+        
+        <section id="gallery-index" class="gallery">
+            <div class="gallery__placeholder">Aguardando sorteio...</div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; João Gabriel Teodosio de Oliveira Lima - 2025</p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
