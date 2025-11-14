@@ -34,12 +34,18 @@ function renderizarProdutos(categoriaSelecionada) {
 
     const cardsProdutos = itensFiltrados.map(item => {
         return `
-      <div class="card-produto">
-        <img src="${item.thumbnail}" alt="${item.title}">
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <p>Categoria: ${item.category}</p>
-      </div>
+        <div class="card-produto">
+            <div class="card-produto__imagem">
+                <img src="${item.thumbnail}" alt="${item.title}">
+                <div class="card-produto__categoria">
+                    <span>${item.category}</span>
+                </div>
+            </div>
+            <div class="card-produto__description">
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+            </div>
+        </div>
     `}).join('')
 
     containerProdutos.innerHTML = cardsProdutos
