@@ -92,15 +92,20 @@ body {
 /* Cartões dos Produtos */
 .card-produto {
     border-radius: 1rem;
+    /* adicionado para diminuir o card do index */
+    max-width: 700px;
     border: 1px solid var(--border);
 }
 
 .card-produto__imagem {
+    height: 270px;
     position: relative;
 }
 
 .card-produto__imagem img {
     object-fit: contain;
+    height: 100%;
+    width: 100%;
     padding: 1rem 0rem;
 }
 
@@ -144,8 +149,8 @@ body {
     height: 15vh;
     padding: 0rem 1rem;
     border-bottom: 1px solid var(--border);
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(60px);
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
     z-index: 1000;
 }
 
@@ -280,6 +285,11 @@ body {
     line-height: 1;
     font-weight: 900;
     font-size: 3rem;
+}
+
+#gallery-random{
+    display: flex;
+    justify-content: center;
 }
 
 @media (min-width: 1025px) {

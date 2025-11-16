@@ -37,7 +37,7 @@ function renderizarProdutos(categoriaSelecionada) {
         return `
         <div class="card-produto">
             <div class="card-produto__imagem">
-                <img src="${item.thumbnail}" alt="${item.title}">
+                <img src="${item.images[0]}" alt="${item.title}">
                 <div class="card-produto__categoria">
                     <span>${item.category}</span>
                 </div>
@@ -73,7 +73,7 @@ function produtoAleatorio() {
     const cardHTML = `
         <div class="card-produto">
             <div class="card-produto__imagem">
-                <img src="${randomItemFilter.thumbnail}" alt="${randomItemFilter.title}">
+                <img src="${randomItemFilter.images[0]}" alt="${randomItemFilter.title}">
                 <div class="card-produto__categoria">
                     <span>${randomItemFilter.category}</span>
                 </div>
